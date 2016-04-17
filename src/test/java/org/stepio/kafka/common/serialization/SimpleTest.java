@@ -19,15 +19,15 @@ public class SimpleTest {
 
     private StringSerializer stringWriter;
     private StringDeserializer stringReader;
-    private TestEntitySerializer jsonWriter;
-    private TestEntityDeserializer jsonReader;
+    private DummyEntitySerializer jsonWriter;
+    private DummyEntityDeserializer jsonReader;
     private DummyEntity entity;
     private String topic;
 
-    private class TestEntitySerializer extends JsonSerializer<DummyEntity> {
+    private class DummyEntitySerializer extends JsonSerializer<DummyEntity> {
     }
 
-    private class TestEntityDeserializer extends JsonDeserializer<DummyEntity> {
+    private class DummyEntityDeserializer extends JsonDeserializer<DummyEntity> {
     }
 
     @Before
@@ -42,9 +42,9 @@ public class SimpleTest {
 
         topic = "topic-name";
 
-        jsonReader = new TestEntityDeserializer();
+        jsonReader = new DummyEntityDeserializer();
         jsonReader.configure(new HashMap<String, Object>(), false);
-        jsonWriter = new TestEntitySerializer();
+        jsonWriter = new DummyEntitySerializer();
         jsonWriter.configure(new HashMap<String, Object>(), false);
         stringReader = new StringDeserializer();
         stringReader.configure(new HashMap<String, Object>(), false);
