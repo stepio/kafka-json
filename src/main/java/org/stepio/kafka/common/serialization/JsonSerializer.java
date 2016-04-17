@@ -19,12 +19,9 @@ public class JsonSerializer<T> implements Serializer<T> {
     private static final Logger LOGGER = LoggerFactory.getLogger(JsonSerializer.class);
 
     private ObjectWriter writer;
-    private StringSerializer serializer;
 
     public void configure(Map<String, ?> configs, boolean isKey) {
         LOGGER.debug("Start configuring");
-        serializer = new StringSerializer();
-        serializer.configure(configs, isKey);
         writer = JsonDatabindFactory.createSerializer(configs, isKey);
         LOGGER.debug("Finish configuring");
     }
@@ -32,11 +29,10 @@ public class JsonSerializer<T> implements Serializer<T> {
     public byte[] serialize(String topic, T data) {
         try {
             LOGGER.debug("Start processing");
-            String text = null;
+            byte [] result = null;
             if (data != null) {
-                text = writer.writeValueAsString(data);
+                result = writer.writeValueAsBytes(data);
             }
-            byte [] result = serializer.serialize(topic, text);
             LOGGER.debug("Finish processing");
             return result;
         } catch (JsonProcessingException ex) {
@@ -46,8 +42,6 @@ public class JsonSerializer<T> implements Serializer<T> {
     }
 
     public void close() {
-        LOGGER.debug("Start closing");
-        serializer.close();
-        LOGGER.debug("Finish closing");
+        LOGGER.debug("Nothing to close");
     }
 }

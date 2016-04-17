@@ -22,12 +22,9 @@ public class JsonDeserializer<T> implements Deserializer<T> {
 
     private Class<T> type;
     private ObjectReader reader;
-    private StringDeserializer deserializer;
 
     public void configure(Map<String, ?> configs, boolean isKey) {
         LOGGER.debug("Start configuring");
-        deserializer = new StringDeserializer();
-        deserializer.configure(configs, isKey);
         // Getting class object:
         // http://blog.xebia.com/acessing-generic-types-at-runtime-in-java/
         type = ((Class) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0]);
@@ -38,10 +35,9 @@ public class JsonDeserializer<T> implements Deserializer<T> {
     public T deserialize(String topic, byte[] data) {
         try {
             LOGGER.debug("Start processing");
-            String text = deserializer.deserialize(topic, data);
             T result = null;
-            if (text != null) {
-                result = reader.readValue(text);
+            if (data != null) {
+                result = reader.readValue(data);
             }
             LOGGER.debug("Finish processing");
             return result;
@@ -55,8 +51,6 @@ public class JsonDeserializer<T> implements Deserializer<T> {
     }
 
     public void close() {
-        LOGGER.debug("Start closing");
-        deserializer.close();
-        LOGGER.debug("Finish closing");
+        LOGGER.debug("Nothing to close");
     }
 }
