@@ -1,0 +1,12 @@
+.classpath
+.project
+.settings
+.springBeans
+/bin/
+/logs/
+/target/
+/target/classes
+*.swp
+.idea
+*.iml
+pom.xml.versionsBackup
