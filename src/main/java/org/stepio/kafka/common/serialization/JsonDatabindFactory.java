@@ -29,7 +29,7 @@ public class JsonDatabindFactory {
     }
 
     /**
-     * Creates {@class ObjectMapper} for the specified config, returns static instance as of now.
+     * Creates {@link ObjectMapper} for the specified config, returns static instance as of now.
      */
     public static ObjectMapper createMapper(Map<String, ?> configs, boolean isKey) {
         LOGGER.debug("Start configuring mapper");
@@ -40,7 +40,7 @@ public class JsonDatabindFactory {
     }
 
     /**
-     * Creates {@class ObjectWriter} for the specified config, returns static instance as of now.
+     * Creates {@link ObjectWriter} for the specified config, returns static instance as of now.
      */
     public static ObjectWriter createSerializer(Map<String, ?> configs, boolean isKey) {
         LOGGER.debug("Start configuring writer");
@@ -51,7 +51,7 @@ public class JsonDatabindFactory {
     }
 
     /**
-     * Creates {@class ObjectReader} for the specified class & config, ignores config as of now.
+     * Creates {@link ObjectReader} for the specified class & config, ignores config as of now.
      */
     public static ObjectReader createDeserializer(Class type, Map<String, ?> configs, boolean isKey) {
         LOGGER.debug("Start configuring reader");

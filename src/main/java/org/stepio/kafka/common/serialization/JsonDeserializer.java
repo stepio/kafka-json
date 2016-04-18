@@ -12,7 +12,7 @@ import java.lang.reflect.ParameterizedType;
 import java.util.Map;
 
 /**
- * Generic {@code Deserializer} for sending Java objects to Kafka as JSON.
+ * Generic {@link Deserializer} for sending Java objects to Kafka as JSON.
  *
  * @author stepio
  */

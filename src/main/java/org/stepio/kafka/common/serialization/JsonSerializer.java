@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Map;
 
 /**
- * Generic {@code Serializer} for sending Java objects to Kafka as JSON.
+ * Generic {@link Serializer} for sending Java objects to Kafka as JSON.
  *
  * @author stepio
  */

@@ -52,7 +52,7 @@ public class SimpleTest {
         stringWriter.configure(new HashMap<String, Object>(), false);
     }
 
-    /**
+    /*
      * 1. Serialize test entity to byte array.
      * 2. Deserialize it back from the created byte array.
      * 3. Check the result with the source entity.
@@ -62,7 +62,7 @@ public class SimpleTest {
         assertEquals(entity, jsonReader.deserialize(topic, jsonWriter.serialize(topic, entity)));
     }
 
-    /**
+    /*
      * 1. Serialize "dummy" String to byte array.
      * 2. Deserialize it back from the created byte array.
      *    - this operation should fail as the source is not json

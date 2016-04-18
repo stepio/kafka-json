@@ -3,7 +3,7 @@ package org.stepio.kafka.common.serialization;
 import org.apache.kafka.common.KafkaException;
 
 /**
- * Specific wrapper, extending {@code KafkaException}.
+ * Specific wrapper, extending {@link KafkaException}.
  *
  * @author stepio
  */
