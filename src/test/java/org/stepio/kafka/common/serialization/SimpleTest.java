@@ -44,8 +44,10 @@ public class SimpleTest {
 
         jsonReader = new DummyEntityDeserializer();
         jsonReader.configure(new HashMap<String, Object>(), false);
+        jsonReader.close(); // does nothing, so may be called any time, or not called at all
         jsonWriter = new DummyEntitySerializer();
         jsonWriter.configure(new HashMap<String, Object>(), false);
+        jsonWriter.close(); // does nothing, so may be called any time, or not called at all
         stringReader = new StringDeserializer();
         stringReader.configure(new HashMap<String, Object>(), false);
         stringWriter = new StringSerializer();
