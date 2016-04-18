@@ -10,6 +10,6 @@ import org.apache.kafka.common.KafkaException;
 public class JsonWrapperException extends KafkaException {
 
     public JsonWrapperException(Throwable cause) {
-            super(cause);
-        }
+        super(cause);
+    }
 }
