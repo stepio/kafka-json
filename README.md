@@ -1,9 +1,12 @@
 # kafka-json
+
+[![Build Status](https://travis-ci.org/stepio/kafka-json.svg?branch=master)](https://travis-ci.org/stepio/kafka-json)
+
 JSON (de)serialization for kafka-client
 
-Generic implementation to support POJO messages.
+Generic implementation to support POJO messages in Kafka. Object is serialized to json and deserialized back with minimum extra code.
 
-Using this project the exact Serializer/Deserializer is implemented much simplier, e.g.:
+Using this project the exact Serializer/Deserializer implemented easily:
 
     public class DummyEntitySerializer extends JsonSerializer<DummyEntity> {
     }
