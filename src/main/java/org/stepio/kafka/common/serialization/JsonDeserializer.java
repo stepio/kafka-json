@@ -26,7 +26,7 @@ public class JsonDeserializer<T> implements Deserializer<T> {
         LOGGER.debug("Start configuring");
         // Getting class object:
         // http://blog.xebia.com/acessing-generic-types-at-runtime-in-java/
-        type = ((Class) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0]);
+        type = ((Class) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[0]);
         reader = JsonDatabindFactory.createDeserializer(type, configs, isKey);
         LOGGER.debug("Finish configuring");
     }
