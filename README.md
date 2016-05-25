@@ -16,3 +16,9 @@ This is achieved with Jackson JSON project:
 http://wiki.fasterxml.com/JacksonHome
 
 No specific configuration is done for Jackson's ObjectMapper as of now, but it's predicted in the design.
+
+The project is not supported anymore, as it's merged into [spring-kafka](https://github.com/spring-projects/spring-kafka).
+The appropriate pull request is here:
+https://github.com/spring-projects/spring-kafka/pull/81
+
+Implementation is significantly improved by @artembilan, although it's not backward-compatible in some cases.
